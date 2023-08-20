@@ -77,15 +77,21 @@ function Leaderboard() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {players.map((player) => (
           <View key={player.id} style={styles.playerRow}>
-            <Text style={styles.cell}>{player.id}</Text>
-            <Text style={styles.cell}>{player.game}</Text>
-            <Text style={styles.cell}>{player.player}</Text>
-            <Feather
-              name={player.booster ? 'arrow-up' : 'arrow-down'}
-              size={24}
-              style={styles.boosterIcon}
-            />
-            <Text style={styles.cell}>{player.profit}</Text>
+            <View style={styles.leftSection}>
+              <Text style={styles.cell}>{player.id}</Text>
+            </View>
+            <View style={styles.middleSection}>
+              <Text style={styles.cell}>{player.game}</Text>
+              <Text style={styles.cell}>{player.player}</Text>
+            </View>
+            <View style={styles.rightSection}>
+              <Feather
+                name={player.booster ? 'arrow-up' : 'arrow-down'}
+                size={24}
+                style={[styles.boosterIcon, player.booster ? styles.boosterUp : styles.boosterDown]}
+              />
+              <Text style={styles.cell}>{player.profit}</Text>
+            </View>
           </View>
         ))}
       </ScrollView>
@@ -96,15 +102,16 @@ function Leaderboard() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    padding: 50,
+    backgroundColor: '#101010',
+    padding: 20,
   },
   title: {
-    fontSize: 36,
-    marginBottom: 50,
-    color: 'black',
+    fontSize: 24,
+    marginBottom: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 60,
   },
   scrollContainer: {
     alignItems: 'center',
@@ -115,15 +122,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     marginBottom: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    backgroundColor: '#1a1a1a',
+    borderRadius: 10,
+  },
+  leftSection: {
+    alignItems: 'flex-start',
+  },
+  middleSection: {
+    alignItems: 'center',
+    flex: 1,
+    marginHorizontal: 10,
+  },
+  rightSection: {
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   cell: {
-    padding: 15,
-    fontSize: 15,
+    fontSize: 14,
+    color: 'white',
   },
   boosterIcon: {
+    fontSize: 24,
+  },
+  boosterUp: {
     color: '#00ff00',
   },
-  noboostericon: {
+  boosterDown: {
     color: '#ff0000',
   },
 });

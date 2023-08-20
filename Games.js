@@ -20,7 +20,9 @@ const Games = () => {
       onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], { useNativeDriver: false })}
       scrollEventThrottle={16}
     >
+      <Slider />
       <View style={styles.main}>
+        <Text style={styles.title}>Games</Text>
         <View style={[styles.gameSection, styles.bgBase200, styles.mb20]}>
           <Image
             source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd9MQn8MHtrJi9fnXOPMZTLDmAFF_jciynvtYiy9gstMLbS0k3YDEiuM3A7y1EkfSJpa8&usqp=CAU' }}
@@ -96,6 +98,16 @@ const styles = StyleSheet.create({
   },
   main: {
     paddingHorizontal: 20,
+    paddingTop: 20, // Add padding to the top
+  },
+
+  title: {
+    fontSize: 36,
+    marginBottom: 10,
+    marginTop: 10,
+    color: 'white',
+    justifyContent: 'center',
+    marginLeft: 100,
   },
   gameSection: {
     borderRadius: 10,

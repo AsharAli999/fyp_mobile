@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     // fontFarmily : '',
     marginBottom: 10,
+    marginTop: 50,
   },
   imageContainer: {
     paddingVertical: 20,

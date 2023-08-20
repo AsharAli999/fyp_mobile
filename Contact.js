@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#101010', // Updated background color
   },
   contact: {
     flexDirection: 'column',
@@ -46,20 +46,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    color: '#101010',
+    color: '#fff', // Updated text color
     marginTop: 50,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 20,
   },
   titleSpan: {
     color: '#f9004d',
-  },
-  description: {
-    color: '#101010',
-    lineHeight: 20,
-    fontSize: 14,
-    marginBottom: 20,
-    textAlign: 'center',
   },
   form: {
     width: '100%',
