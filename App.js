@@ -5,6 +5,8 @@ import ContactUs from './Contact';
 import Games from './Games';
 import SignupScreen from './SignupScreen';
 import LoginScreen from './LoginScreen';
+import MinesweeperGame from './MinesweeperGame';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +21,9 @@ const App = () => {
       {/* <ContactUs /> */}
       {/* <Games /> */}
       {/* <SignupScreen /> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
+      <MinesweeperGame />
+
     </View>
   );
 };
